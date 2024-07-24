@@ -9,6 +9,21 @@ function App() {
 
   const [todos , setTodos] = useState([]);
   const [checkedItems , setCheckedItems] = useState([]);
+  const [deletedItems , setDeletedItems] = useState([]);
+  const [modalData , setModalData] = useState({
+    modalType : null ,
+    Mname : null,
+    title : null , 
+    id : null 
+  });
+  const [showModal , setShowModal] = useState(false);
+  const [showFormAlert , setShowFormAlert ] = useState(false);
+  const [formAlertData , setFormAlertData] = useState(
+    {
+      typeError : null ,
+      message : null
+    }
+  );
 
   const todoItem = {
     id: null,
@@ -25,11 +40,10 @@ function App() {
 
   const [itemId , setItemId] = useState(1);
 
-// console.log(todos);
 
 
   return (
-    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems }}>
+    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData}}>
       <Content/>
     </MyContext.Provider>
   );
