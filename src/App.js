@@ -10,7 +10,7 @@ function App() {
   const [todos , setTodos] = useState([]);
   const [checkedItems , setCheckedItems] = useState([]);
   const [deletedItems , setDeletedItems] = useState([]);
-  const [darkMood , setDarkMood] = useState(false);
+  const [darkMode , setDarkMode] = useState(false);
   const [sortOption , setSortOption] = useState(null);
   const [itemId , setItemId] = useState(1);
   const [modalData , setModalData] = useState({
@@ -56,7 +56,7 @@ function App() {
 
 
   return (
-    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData , darkMood , setDarkMood , sortOption , setSortOption}}>
+    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData , darkMode , setDarkMode , sortOption , setSortOption}}>
       <Content/>
     </MyContext.Provider>
   );

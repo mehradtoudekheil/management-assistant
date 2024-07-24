@@ -247,16 +247,16 @@ return (
   <div className='mt-5 w-10/12'>
     <form action="" className='w-full'>
       <div className='w-full'>
-        <input ref={todoTitle} type="text" placeholder='Title : ' className='h-10 w-full  rounded-xl p-3 shadow-md shadow-slate-200 outline-fuchsia-600' />
+        <input ref={todoTitle} type="text" placeholder='Title : ' className={`h-10 w-full  rounded-xl p-3 shadow-md ${info.darkMode ? "shadow-gray-700 bg-gray-300 outline-slate-800" : "shadow-slate-200 outline-fuchsia-600"}`} />
       </div>
       <div className='w-full my-5'>
-        <p className='ml-3 text-indigo-800'>
+        <p className={`ml-3 ${info.darkMode ? "text-fuchsia-600" : "text-indigo-800"}`}>
           Explain your task here:
         </p>
-        <textarea ref={todoExplane} className='h-24 mt-3 w-full  rounded-xl p-3 shadow-md shadow-slate-200 outline-fuchsia-600' name="" id="" placeholder='Write here.'></textarea>
+        <textarea ref={todoExplane} className={`h-24 mt-3 w-full  rounded-xl p-3 shadow-md ${info.darkMode ? "shadow-gray-700 bg-gray-300 outline-slate-800" : "shadow-slate-200 outline-fuchsia-600"}`} name="" id="" placeholder='Write here.'></textarea>
       </div>
       <div className='w-full my-5'>
-        <p className='ml-3 text-indigo-800'>
+        <p  className={`ml-3 ${info.darkMode ? "text-fuchsia-600" : "text-indigo-800"}`}>
           Task Importance Level :
         </p>
 
@@ -266,7 +266,7 @@ return (
         <div className='w-full flex justify-between'>
           <p className='text-xs text-slate-400'>Not Important</p>
           <div className='w-10 h-10 border-8 rounded-full flex justify-center items-center mt-3' id='circle'>
-            <p className='text-xs text-slate-600'>
+            <p className={`text-xs ${info.darkMode ? "text-white" : "text-slate-600"}`}>
               {importanceValue}
             </p>
           </div>
@@ -275,7 +275,7 @@ return (
 
         <div className='w-full mt-3'>
           <div className='w-full flex justify-between'>
-            <p className='ml-3 text-indigo-800'>
+          <p  className={`ml-3 ${info.darkMode ? "text-fuchsia-600" : "text-indigo-800"}`}>
               Reminder :
             </p>
             <div>
@@ -285,15 +285,18 @@ return (
 
           {
             showReminder ? <div className='flex justify-around mt-4'>
-              <input ref={todoDate} type="date" className='shadow shadow-md shadow-slate-200 p-1 rounded-xl text-fuchsia-600 outline-fuchsia-600' />
-              <input ref={todoTime} type="time" className='shadow shadow-md shadow-slate-200 p-1 rounded-xl text-fuchsia-600 outline-fuchsia-600' />
+              <input ref={todoDate} type="date" className={`shadow shadow-md  p-1 rounded-xl text-fuchsia-600 outline-fuchsia-600 ${info.darkMode ? "bg-gray-300 shaddow-gray-700" :"shadow-slate-200"}`} />
+              <input ref={todoTime} type="time" className={`shadow shadow-md  p-1 rounded-xl text-fuchsia-600 outline-fuchsia-600 ${info.darkMode ? "bg-gray-300 shaddow-gray-700" :"shadow-slate-200"}`} />
             </div> : <div className='flex justify-around mt-4'>
-              <input disabled type="date" className='shadow shadow-md shadow-slate-200 p-1 rounded-xl text-slate-300 outline-fuchsia-600' />
-              <input disabled type="time" className='shadow shadow-md shadow-slate-200 p-1 rounded-xl text-slate-300 outline-fuchsia-600' />
+              <input disabled type="date" className={`shadow shadow-md  p-1 rounded-xl outline-fuchsia-600 ${info.darkMode ? "bg-slate-800 text-slate-600" : "shadow-slate-200 text-slate-300 "}`} />
+              <input disabled type="time" className={`shadow shadow-md  p-1 rounded-xl outline-fuchsia-600 ${info.darkMode ? "bg-slate-800 text-slate-600" : "shadow-slate-200 text-slate-300 "}`} />
             </div>
           }
           <div className='w-full'>
-            <p className={`${showReminder}  ? "ml-3 text-indigo-800 mt-4" : "ml-3 text-slate-200 mt-4 " `}>How remind you?</p>
+            
+            {
+              info.darkMode ? <p className={` ${showReminder ?  "ml-3 text-fuchsia-600 mt-4" :  "ml-3 text-gray-600 mt-4"}`}>How remind you?</p> : <p className={` ${showReminder ?  "ml-3 text-indigo-800 mt-4" :  "ml-3 text-slate-200 mt-4"}`}>How remind you?</p>
+            }
             <div className='w-full flex justify-around mt-3'>
               <div>
                 <input ref={todoRing} type="radio" id='ring' className='mr-1' name='reminderOption' />

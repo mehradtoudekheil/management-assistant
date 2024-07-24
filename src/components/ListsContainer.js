@@ -36,19 +36,19 @@ function ListsContainer() {
 
 
     return (
-        <div className='col-span-8 h-full bg-fuchsia-600 lists-container' >
+        <div className={`col-span-8 h-full lists-container ${info.darkMode ? "bg-gray-950" : "bg-fuchsia-600"}`} >
             <div className='w-full h-14 border-b-2 border-fuchsia-700 px-4 flex items-center justify-between'>
                 <div className='flex'>
                     <button className='border border-2 px-4 py-1 rounded-xl text-fuchsia-200 border-fuchsia-800 hover:bg-white hover:text-fuchsia-700 transition duration-300' onClick={sortHandler}>
                         <p className='font-bold'>Sort By</p>
                     </button>
-                    <button className='border text-red-800 border-2 px-4 py-1 rounded-xl border-red-600 mx-3 hover:bg-red-500 hover:text-white transition duration-300' onClick={resetApp}>
+                    <button className='border border-2 px-4 py-1 rounded-xl text-fuchsia-200 border-fuchsia-800 hover:bg-white hover:text-fuchsia-700 transition duration-300 mx-3' onClick={resetApp}>
                         <p className='font-bold'>Reset All</p>
                     </button>
                 </div>
                 <div className='flex'>
                     {
-                        info.darkMood ? <FaSun className='text-fuchsia-900 text-lg mx-2 cursor-pointer hover:text-slate-100 transition duration-200' /> : <FaMoon className='text-fuchsia-900 text-lg mx-2 cursor-pointer hover:text-slate-100 transition duration-200' />
+                        info.darkMode ? <FaSun className='text-fuchsia-900 text-lg mx-2 cursor-pointer hover:text-slate-100 transition duration-200' onClick={()=>info.setDarkMode(false)}/> : <FaMoon className='text-fuchsia-900 text-lg mx-2 cursor-pointer hover:text-slate-100 transition duration-200' onClick={()=>info.setDarkMode(true)}/>
                     }
                     <FaCog className='text-fuchsia-900 text-lg mx-2 cursor-pointer hover:text-slate-100 transition duration-200' />
                 </div>

@@ -58,13 +58,13 @@ function TodoList() {
 
 
     return (
-        <div className='h-full w-4/5 bg-fuchsia-100 rounded-xl shadow shadow-xl shadow-fuchsia-900'>
+        <div className={`h-full w-4/5  rounded-xl shadow shadow-xl  ${info.darkMode ? "bg-gray-800 sahdow-gray-800" : "shadow-fuchsia-900 bg-fuchsia-100"}`}>
 
             <div className='h-14 w-full rounded-tl-xl rounded-tr-xl bg-sky-400'>
                 <h6 className='text-sky-800 font-bold text-center py-4'>Tasks To Do</h6>
             </div>
-
-            <div className='w-full overflow-y-scroll'>
+            {/* overflow scroll here */}
+            <div className='w-full'>
                 {
                     info.todos.length < 1 ? <div className='flex flex-col items-center'>
                         <p className='text-center mt-10 text-sky-800 font-bold'>There is no task to do!!!</p>

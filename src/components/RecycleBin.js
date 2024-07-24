@@ -39,12 +39,13 @@ function RecycleBin() {
 
 
     return (
-        <div className='w-4/5 mt-10 h-64  bg-fuchsia-100 rounded-xl shadow shadow-xl shadow-fuchsia-900'>
+        <div className={`w-4/5 h-64 rounded-xl shadow shadow-xl  ${info.darkMode ? "bg-gray-800 sahdow-gray-800" : "shadow-fuchsia-900 bg-fuchsia-100"}`}>
 
             <div className='h-14 w-full rounded-tl-xl rounded-tr-xl bg-rose-400'>
                 <h6 className='text-rose-800 font-bold text-center py-4'>Recycle Bin</h6>
             </div>
-            <div className='w-full h-48 overflow-y-scroll'>
+            {/* overflow scroll here */}
+            <div className='w-full h-48'>
                 {
                     info.deletedItems.length < 1 ? <div className='flex flex-col items-center'>
                         <p className='text-center mt-10 text-rose-500 font-bold'>Your bin is empty!!!</p>

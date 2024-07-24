@@ -13,7 +13,7 @@ function Content() {
   return (
     <div className='w-full'>
         <div className='grid grid-cols-11 h-screen w-full'>
-
+          
           <AddItemContainer/>
           <ListsContainer/>
 
