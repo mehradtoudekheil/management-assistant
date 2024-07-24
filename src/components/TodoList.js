@@ -8,12 +8,11 @@ import trashImg from "./../assets/img/icons/trash.png"
 import checkImg from "./../assets/img/icons/check.png"
 import infoImg from "./../assets/img/icons/info.png"
 import clockImg from "./../assets/img/icons/clock.png"
-
+import listImg from "./../assets/img/list.png"
 
 function TodoList() {
 
     const info = useContext(MyContext);
-    const [showExplane, setShowExplane] = useState(false);
 
     const checkItemHandler = (e) => {
         let id = e.target.dataset.id;
@@ -45,6 +44,18 @@ function TodoList() {
 
     }
 
+    const showInformation = (e)=>{
+        info.setShowModal(true);
+        info.setModalData({  
+            modalType : "INFO",
+            Mname : "What Item You have" , 
+            title : null,
+            id : e.target.dataset.id
+        }
+        )
+        
+    }
+
 
     return (
         <div className='h-full w-4/5 bg-fuchsia-100 rounded-xl shadow shadow-xl shadow-fuchsia-900'>
@@ -56,8 +67,8 @@ function TodoList() {
             <div className='w-full overflow-y-scroll'>
                 {
                     info.todos.length < 1 ? <div className='flex flex-col items-center'>
-                        <p className='text-center mt-10 text-rose-500 font-bold'>There is no task to do!!!</p>
-                        <FaCircleExclamation className='text-8xl mt-10 text-rose-500' />
+                        <p className='text-center mt-10 text-sky-800 font-bold'>There is no task to do!!!</p>
+                      <img src={listImg} className='w-24 h-24' alt="" />
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.todos.map((item) => {
@@ -81,15 +92,11 @@ function TodoList() {
 
                                             <img src={trashImg} alt="" data-id={item.id} onClick={(e) => deleteHandler(e)} className='w-5 h-5 mx-0.5 cursor-pointer' />
 
-                                            <img src={infoImg} className='w-5 h-5 mx-0.5 cursor-pointer' alt=""  onClick={() => setShowExplane(!showExplane)}/>
+                                            <img src={infoImg} className='w-5 h-5 mx-0.5 cursor-pointer' alt="" data-id={item.id}  onClick={(e)=>showInformation(e)}/>
 
                                         </div>
                                     </div>
-                                    {
-                                        showExplane ? <div>
-                                            <p className='text-center text-slate-700 py-1'>{item.explane}</p>
-                                        </div> : <></>
-                                    }
+                                   
                                 </li>
                             })
                         }

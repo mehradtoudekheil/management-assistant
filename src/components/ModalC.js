@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { MyContext } from '../context/MyContext';
 import DelModal from './modals/DelModal';
 import ItemInfoModal from './modals/ItemInfoModal';
+import SortOptions from './modals/SortOptions';
+import ResetModal from './modals/ResetModal';
 
 function ModalC() {
 
@@ -12,12 +14,20 @@ function ModalC() {
 
     let ShowComponent;
 
-    if(data.modalType == "DELETE"){
+    switch (data.modalType){
+        case "DELETE" : 
         ShowComponent = <DelModal/>
-    }else if(data.modalType == "INFO"){
-        <ItemInfoModal/>
+        break;
+        case "INFO" : 
+        ShowComponent = <ItemInfoModal/>
+        break;
+        case "SORT" : 
+        ShowComponent = <SortOptions/>
+        break;
+        case "RESET" : 
+        ShowComponent = <ResetModal/>
     }
-   
+
 
     return (
         <>
@@ -28,4 +38,4 @@ function ModalC() {
     )
 }
 
-export default ModalC
+export default ModalC;

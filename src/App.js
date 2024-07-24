@@ -10,6 +10,9 @@ function App() {
   const [todos , setTodos] = useState([]);
   const [checkedItems , setCheckedItems] = useState([]);
   const [deletedItems , setDeletedItems] = useState([]);
+  const [darkMood , setDarkMood] = useState(false);
+  const [sortOption , setSortOption] = useState(null);
+  const [itemId , setItemId] = useState(1);
   const [modalData , setModalData] = useState({
     modalType : null ,
     Mname : null,
@@ -38,12 +41,22 @@ function App() {
     deleteStatus : null
   }
 
-  const [itemId , setItemId] = useState(1);
+  console.log(sortOption);
+
+
+  // sort functions 
+
+  // last to first = ltf 
+  // first to last = ftl 
+  // a to z = atz 
+  // z to a = zta 
+  // importance 
+
 
 
 
   return (
-    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData}}>
+    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData , darkMood , setDarkMood , sortOption , setSortOption}}>
       <Content/>
     </MyContext.Provider>
   );

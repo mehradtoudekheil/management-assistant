@@ -6,6 +6,7 @@ import { FaCircleExclamation, FaCircleInfo, FaCircleCheck, FaRegTrashCan, FaCloc
 // import images
 import trashImg from "./../assets/img/icons/trash.png"
 import undoImg from "./../assets/img/icons/undo.png"
+import checkedItemsImg from "./../assets/img/checkedItems.png"
 
 function CheckedItemList() {
 
@@ -48,8 +49,8 @@ function CheckedItemList() {
             <div className='w-full h-48 overflow-y-scroll'>
                 {
                     info.checkedItems.length < 1 ? <div className='flex flex-col items-center'>
-                        <p className='text-center mt-10 text-rose-500 font-bold'>There is no task to do!!!</p>
-                        <FaCircleExclamation className='text-8xl mt-10 text-rose-500' />
+                        <p className='text-center mt-10 text-emerald-500 font-bold'>There is no task you did it!!!</p>
+                        <img src={checkedItemsImg} className='w-20 h-20' alt="" />
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.checkedItems.map((item) => {

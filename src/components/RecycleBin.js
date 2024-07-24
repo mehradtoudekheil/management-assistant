@@ -6,7 +6,7 @@ import { FaCircleExclamation, FaCircleInfo, FaCircleCheck, FaRegTrashCan, FaCloc
 // import images
 import trashImg from "./../assets/img/icons/trash.png"
 import undoImg from "./../assets/img/icons/undo.png"
-
+import binImg from "./../assets/img/bin.png"
 
 function RecycleBin() {
 
@@ -47,8 +47,8 @@ function RecycleBin() {
             <div className='w-full h-48 overflow-y-scroll'>
                 {
                     info.deletedItems.length < 1 ? <div className='flex flex-col items-center'>
-                        <p className='text-center mt-10 text-rose-500 font-bold'>There is no task to do!!!</p>
-                        <FaCircleExclamation className='text-8xl mt-10 text-rose-500' />
+                        <p className='text-center mt-10 text-rose-500 font-bold'>Your bin is empty!!!</p>
+                      <img src={binImg} className='w-16 h-16 mt-3' alt="" />
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.deletedItems.map((item) => {
@@ -56,7 +56,6 @@ function RecycleBin() {
                                     <div className='flex justify-between items-center w-full'>
 
                                         <div className='flex items-center h-full'>
-
                                             <p className='px-3  border-r-2 text-slate-500'>{item.id}</p>
                                             <p className='font-bold px-3'>{item.title}</p>
                                         </div>
