@@ -26,13 +26,13 @@ function RecycleBin() {
 
     }
 
-    const removeHandler = (e)=>{
+    const removeHandler = (e) => {
         info.setShowModal(true);
-        info.setModalData({  
-            modalType : "DELETE",
-            Mname : "DELETE" , 
-            title : "Do You Want Delete This Item?",
-            id : e.target.dataset.id
+        info.setModalData({
+            modalType: "DELETE",
+            Mname: "DELETE",
+            title: "Do You Want Delete This Item?",
+            id: e.target.dataset.id
         }
         )
     }
@@ -41,19 +41,19 @@ function RecycleBin() {
     return (
         <div className={`w-4/5 h-64 rounded-xl shadow shadow-xl  ${info.darkMode ? "bg-gray-800 sahdow-gray-800" : "shadow-fuchsia-900 bg-fuchsia-100"}`}>
 
-            <div className='h-14 w-full rounded-tl-xl rounded-tr-xl bg-rose-400'>
-                <h6 className='text-rose-800 font-bold text-center py-4'>Recycle Bin</h6>
+            <div className={`h-14 w-full rounded-tl-xl rounded-tr-xl ${info.darkMode ? "bg-rose-600" : "bg-rose-400"}`}>
+                <h6 className={`font-bold text-center py-4 ${info.darkMode ? "text-rose-200" : "text-rose-800"}`}>Recycle Bin</h6>
             </div>
             {/* overflow scroll here */}
             <div className='w-full h-48'>
                 {
                     info.deletedItems.length < 1 ? <div className='flex flex-col items-center'>
                         <p className='text-center mt-10 text-rose-500 font-bold'>Your bin is empty!!!</p>
-                      <img src={binImg} className='w-16 h-16 mt-3' alt="" />
+                        <img src={binImg} className='w-16 h-16 mt-3' alt="" />
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.deletedItems.map((item) => {
-                                return <li key={item.id} className='w-11/12 bg-white py-2 rounded-xl shadow-md shadow shadow-slate-300  px-3 my-1'>
+                                return <li key={item.id} className={`px-3 my-1 w-11/12  py-2 rounded-xl  ${info.darkMode ? "bg-slate-200" : "bg-white shadow-md shadow shadow-slate-300"}`}>
                                     <div className='flex justify-between items-center w-full'>
 
                                         <div className='flex items-center h-full'>
@@ -66,13 +66,13 @@ function RecycleBin() {
                                             <div className='h-3 w-3 mx-5 rounded-full'>
                                             </div>
 
-                                           
-                                            
+
+
                                             <img src={undoImg} className='w-5 h-5 mx-0.5' data-id={item.id} onClick={(e) => undoItemHandler(e)} alt="" />
 
-                                            <img src={trashImg} className='mx-0.5 w-5 h-5'  data-id={item.id} onClick={(e)=>removeHandler(e)} alt="" />
+                                            <img src={trashImg} className='mx-0.5 w-5 h-5' data-id={item.id} onClick={(e) => removeHandler(e)} alt="" />
 
-                                            
+
 
                                         </div>
                                     </div>

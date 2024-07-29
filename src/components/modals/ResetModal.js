@@ -20,14 +20,14 @@ function ResetModal() {
 
 
   return (
-    <div className='w-96 h-72 absolute left-1/3 bg-white rounded-xl shadow shadow-md shadow-slate-400 top-20'>
+    <div className={`w-96 h-72 absolute left-1/3 rounded-xl shadow shadow-md  top-20 ${info.darkMode ? "bg-slate-500" : "bg-white shadow-slate-400"}`}>
     <div className='w-full rounded-tl-xl flex justify-center items-center rounded-tr-xl h-16 bg-red-600'>
         <h6 className='text-white font-bold'>
             RESET
         </h6>
     </div>
     <div className='border-b-2 h-36 flex justify-center items-center'>
-        <p className='text-gray-600 font-bold'>
+        <p className={`font-bold ${info.darkMode ? "text-white" : "text-gray-600"}`}>
             Do You Want To Reset All Items?
         </p>
     </div>

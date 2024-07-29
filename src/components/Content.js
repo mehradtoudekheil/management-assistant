@@ -5,6 +5,9 @@ import ModalC from './ModalC';
 import { useContext } from 'react';
 import { MyContext } from '../context/MyContext';
 import FormAlert from './FormAlert';
+import AddItemContainerResp from './AddItemContainerResp';
+import HeaderResp from './HeaderResp';
+import ListContainerResp from './ListContainerResp';
 
 function Content() {
 
@@ -14,6 +17,10 @@ function Content() {
     <div className='w-full'>
         <div className='grid grid-cols-11 h-screen w-full'>
           
+          <HeaderResp/>
+          <AddItemContainerResp />
+          <ListContainerResp/>
+
           <AddItemContainer/>
           <ListsContainer/>
 

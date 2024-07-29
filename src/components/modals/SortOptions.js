@@ -21,14 +21,14 @@ function SortOptions() {
 
 
     return (
-        <div className='w-96 h-72 absolute left-1/3 bg-white rounded-xl shadow shadow-md shadow-slate-400 top-20'>
+        <div className={`w-96 h-72 absolute left-1/3 rounded-xl shadow shadow-md  top-20 ${info.darkMode ? "bg-slate-500" : "bg-white shadow-slate-400"}`}>
             <div className='w-full rounded-tl-xl px-4 flex justify-between items-center rounded-tr-xl h-16 bg-fuchsia-500'>
                 <h6 className='text-fuchsia-900 text-center font-bold w-full'>Set Sort By </h6>
             </div>
             <div className='w-full h-40 border-b-2'>
                 <form className='flex flex-col justify-start items-center h-full'>
 
-                        <p className='text-gray-700 font-bold mt-7'>Please Choose Type Of Sort :</p>
+                <p className={`font-bold mt-7 ${info.darkMode ? "text-white" : "text-gray-600"}`}>Please Choose Type Of Sort :</p>
                         <select name="sortType" id="sortType" className='shadow shadow-slate-400 w-40 py-2 px-3 rounded-lg mt-5 outline-fuchsia-500' ref={sortType}>
                             <option value="">Choose</option>
                             <option value="ATZ">A to Z</option>

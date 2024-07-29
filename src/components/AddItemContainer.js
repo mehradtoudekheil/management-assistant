@@ -11,7 +11,7 @@ function AddItemContainer() {
     let darkMode = info.darkMode;
 
     return (
-        <div className={`col-span-3 h-full flex flex-col items-center border-r-2 ${darkMode ? "bg-slate-800" : "bg-white"}`}>
+        <div className={`hidden md:flex col-span-3 h-full flex-col items-center border-r-2 ${darkMode ? "bg-slate-800" : "bg-white"}`}>
             <h1 className='text-center font-bold text-fuchsia-600 text-2xl pt-5'>ToDooooo!!!</h1>
             <AddItemForm/>
         </div>

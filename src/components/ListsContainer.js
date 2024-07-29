@@ -36,8 +36,8 @@ function ListsContainer() {
 
 
     return (
-        <div className={`col-span-8 h-full lists-container ${info.darkMode ? "bg-gray-950" : "bg-fuchsia-600"}`} >
-            <div className='w-full h-14 border-b-2 border-fuchsia-700 px-4 flex items-center justify-between'>
+        <div className={`hidden md:block col-span-11 md:col-span-8 h-full lists-container ${info.darkMode ? "bg-gray-950" : "bg-fuchsia-600"}`} >
+            <div className='hidden md:flex w-full h-14 border-b-2 border-fuchsia-700 px-4 items-center justify-between'>
                 <div className='flex'>
                     <button className='border border-2 px-4 py-1 rounded-xl text-fuchsia-200 border-fuchsia-800 hover:bg-white hover:text-fuchsia-700 transition duration-300' onClick={sortHandler}>
                         <p className='font-bold'>Sort By</p>

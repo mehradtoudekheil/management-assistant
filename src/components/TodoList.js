@@ -60,8 +60,8 @@ function TodoList() {
     return (
         <div className={`h-full w-4/5  rounded-xl shadow shadow-xl  ${info.darkMode ? "bg-gray-800 sahdow-gray-800" : "shadow-fuchsia-900 bg-fuchsia-100"}`}>
 
-            <div className='h-14 w-full rounded-tl-xl rounded-tr-xl bg-sky-400'>
-                <h6 className='text-sky-800 font-bold text-center py-4'>Tasks To Do</h6>
+            <div className={`h-14 w-full rounded-tl-xl rounded-tr-xl ${info.darkMode ? "bg-sky-600" : "bg-sky-400"}`}>
+                <h6 className={`font-bold text-center py-4 ${info.darkMode ? "text-sky-200" : "text-sky-800"}`}>Tasks To Do</h6>
             </div>
             {/* overflow scroll here */}
             <div className='w-full'>
@@ -72,10 +72,10 @@ function TodoList() {
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.todos.map((item) => {
-                                return <li key={item.id} className='w-11/12 bg-white py-2 rounded-xl shadow-md shadow shadow-slate-300  px-3 my-1'>
+                                return <li key={item.id} className={`px-3 my-1 w-11/12  py-2 rounded-xl  ${info.darkMode ? "bg-slate-200" : "bg-white shadow-md shadow shadow-slate-300"}`}>
                                     <div className='flex justify-between items-center w-full'>
                                         <div className='flex items-center h-full'>
-                                            <p className='px-3  border-r-2 text-slate-500'>{item.id}</p>
+                                            <p className='px-3  border-r-2 border-slate-300 text-slate-500'>{item.id}</p>
                                             <p className='font-bold px-3'>{item.title}</p>
                                         </div>
                                         <div className='flex items-center'>

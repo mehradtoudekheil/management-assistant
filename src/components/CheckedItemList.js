@@ -43,8 +43,8 @@ function CheckedItemList() {
     return (
         <div className={`w-4/5 h-64 rounded-xl shadow shadow-xl  ${info.darkMode ? "bg-gray-800 sahdow-gray-800" : "shadow-fuchsia-900 bg-fuchsia-100"}`}>
 
-            <div className='h-14 w-full rounded-tl-xl rounded-tr-xl bg-emerald-400'>
-                <h6 className='text-emerald-800 font-bold text-center py-4'>Checked Items</h6>
+            <div className={`h-14 w-full rounded-tl-xl rounded-tr-xl ${info.darkMode ? "bg-emerald-600" : "bg-emerald-400"}`}>
+                <h6 className={`font-bold text-center py-4 ${info.darkMode ? "text-emerald-200" : "text-emerald-800"}`}>Checked Items</h6>
             </div>
             {/* overflow scroll here */}
             <div className='w-full h-48'>
@@ -55,7 +55,7 @@ function CheckedItemList() {
                     </div> : <ul className='w-full flex flex-col items-center py-5'>
                         {
                             info.checkedItems.map((item) => {
-                                return <li key={item[0].id} className='w-11/12 bg-white py-2 rounded-xl shadow-md shadow shadow-slate-300  px-3 my-1'>
+                                return <li key={item.id} className={`px-3 my-1 w-11/12  py-2 rounded-xl  ${info.darkMode ? "bg-slate-200" : "bg-white shadow-md shadow shadow-slate-300"}`}>
                                     <div className='flex justify-between items-center w-full'>
 
                                         <div className='flex items-center h-full'>
@@ -68,12 +68,12 @@ function CheckedItemList() {
                                             <div className='h-3 w-3 mx-5 rounded-full'>
                                             </div>
 
-                                         
-                                            <img src={undoImg} className='w-5 h-5 mx-0.5' alt=""  data-id={item[0].id} onClick={(e) => reDoHandler(e)} />
 
-                                            <img src={trashImg} className='w-5 h-5 mx-0.5' alt=""  data-id={item[0].id} onClick={(e) => deleteItemHandler(e)}/>
+                                            <img src={undoImg} className='w-5 h-5 mx-0.5' alt="" data-id={item[0].id} onClick={(e) => reDoHandler(e)} />
 
-                                          
+                                            <img src={trashImg} className='w-5 h-5 mx-0.5' alt="" data-id={item[0].id} onClick={(e) => deleteItemHandler(e)} />
+
+
 
                                         </div>
                                     </div>

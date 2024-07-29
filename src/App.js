@@ -28,6 +28,8 @@ function App() {
     }
   );
 
+  const [showBoxes , setShowBoxes] = useState("TODO");
+
   const todoItem = {
     id: null,
     title: null,
@@ -41,7 +43,7 @@ function App() {
     deleteStatus : null
   }
 
-  console.log(sortOption);
+  // console.log(sortOption);
 
 
   // sort functions 
@@ -56,7 +58,7 @@ function App() {
 
 
   return (
-    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData , darkMode , setDarkMode , sortOption , setSortOption}}>
+    <MyContext.Provider value={{todos , setTodos , todoItem , itemId , setItemId , checkedItems , setCheckedItems , deletedItems , setDeletedItems , showModal , setShowModal , modalData , setModalData , showFormAlert , setShowFormAlert ,formAlertData , setFormAlertData , darkMode , setDarkMode , sortOption , setSortOption , showBoxes , setShowBoxes}}>
       <Content/>
     </MyContext.Provider>
   );
